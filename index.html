@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <title>Dice Game</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(65, 65, 65);
+            font-family: 'Zilla Slab', serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-align: center;
+            margin: 40px 0px;
+            text-shadow: khaki 1px 1px 3px;
+        }
+
+        .names {
+            display: flex;
+            flex-direction: row;
+        }
+
+        span {
+            margin: 30px 100px;
+            font-size: 25px;
+            text-shadow: lightcoral 1px 1px 2px;
+            font-weight: bold;
+        }
+
+        .imgs {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .image {
+            width: 100px;
+            height: 100px;
+            margin: 10px 18px;
+            padding: 10px 75px;
+        }
+
+        footer {
+            text-align: center;
+            color: lightcyan;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="winner">Refresh Me!</h1>
+    <div class="container">
+        <div class="names">
+            <span class="player">Player 1</span>
+            <span class="player">Player 2</span>
+        </div>
+        <div class="imgs">
+            <img src="images/dice1.png" alt="" class="image" id="d1">
+            <img src="images/dice2.png" alt="" class="image" id="d2">
+        </div>
+    </div>
+    <footer class="footer">Made by : Mayur</footer>
+
+    <script>
+        let randomNo1 = Math.floor(Math.random() * 6 + 1);
+        switch (randomNo1) {
+            case 1:
+                document.querySelector("#d1").setAttribute("src","images/dice1.png");
+                break;
+            case 2:
+                document.querySelector("#d1").setAttribute("src", "images/dice2.png");
+                break;
+            case 3:
+                document.querySelector("#d1").setAttribute("src", "images/dice3.png");
+                break;
+            case 4:
+                document.querySelector("#d1").setAttribute("src", "images/dice4.png");
+                break;
+            case 5:
+                document.querySelector("#d1").setAttribute("src", "images/dice5.png");
+                break;
+            case 6:
+                document.querySelector("#d1").setAttribute("src", "images/dice6.png");
+                break;
+        }
+        let randomNo2 = Math.floor(Math.random() * 6 + 1);
+        switch (randomNo2) {
+            case 1:
+                document.querySelector("#d2").setAttribute("src","images/dice1.png");
+                break;
+            case 2:
+                document.querySelector("#d2").setAttribute("src", "images/dice2.png");
+                break;
+            case 3:
+                document.querySelector("#d2").setAttribute("src", "images/dice3.png");
+                break;
+            case 4:
+                document.querySelector("#d2").setAttribute("src", "images/dice4.png");
+                break;
+            case 5:
+                document.querySelector("#d2").setAttribute("src", "images/dice5.png");
+                break;
+            case 6:
+                document.querySelector("#d2").setAttribute("src", "images/dice6.png");
+                break;
+        }
+        
+        if(randomNo1==randomNo2){
+            document.querySelector("h1").innerHTML="Match Drawn!";
+        }
+        else if(randomNo1 > randomNo2){
+            document.querySelector("h1").innerHTML="Player 1 Wins!";
+        }
+        else if(randomNo1 < randomNo2){
+            document.querySelector("h1").innerHTML="Player 2 Wins!";
+        }
+
+    </script>
+</body>
+
+</html>
